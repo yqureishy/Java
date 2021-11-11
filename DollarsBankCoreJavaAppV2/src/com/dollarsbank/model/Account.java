@@ -1,74 +1,114 @@
 package com.dollarsbank.model;
 
-import java.util.concurrent.atomic.AtomicInteger;
+
 
 public class Account {
 	
-	public static enum Type {
-		CHECKINGS, SAVINGS
-	}
-	
-	
-			
-			
-	
-	
-	
-	
-	
-	
-	private double balance;
-	
-	private Type type;
-	
-	private Customer customer;
-	
-	private static final AtomicInteger count = new AtomicInteger(0);
-	
-	
-	
-	
+private String name;
 
-	public Account(int accountNumber, double balance, Type type, Customer customer) {
-		super();
-		accountNumber = count.incrementAndGet();
-		this.balance = balance;
-		this.type = type;
-		this.customer = customer;
-	}
-	
-	public Account(double balance, Type type, Customer customer) {
-		super();
-		this.balance = balance;
-		this.type = type;
-		this.customer = customer;
-	}
-	
-	
+private String address;
 
-	public double getBalance() {
-		return balance;
-	}
+private String phoneNumber;
 
-	public void setBalance(double balance) {
-		this.balance = balance;
-	}
+private String userId;
 
-	public Type getType() {
-		return type;
-	}
+private String password;
 
-	public void setType(Type type) {
-		this.type = type;
-	}
+private double deposit;
 
-	public Customer getCustomer() {
-		return customer;
-	}
 
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
-	}
+
+public Account(String name, String address, String phoneNumber, String userId, String password, double deposit) {
+	super();
+	this.name = name;
+	this.address = address;
+	this.phoneNumber = phoneNumber;
+	this.userId = userId;
+	this.password = password;
+	this.deposit = deposit;
+}
+
+
+
+
+
+
+public String getName() {
+	return name;
+}
+
+
+
+public void setName(String name) {
+	this.name = name;
+}
+
+
+
+public String getAddress() {
+	return address;
+}
+
+
+
+public void setAddress(String address) {
+	this.address = address;
+}
+
+
+
+public String getPhoneNumber() {
+	return phoneNumber;
+}
+
+
+
+public void setPhoneNumber(String phoneNumber) {
+	this.phoneNumber = phoneNumber;
+}
+
+
+
+public String getUserId() {
+	return userId;
+}
+
+
+
+public void setUserId(String userId) {
+	this.userId = userId;
+}
+
+
+
+public String getPassword() {
+	return password;
+}
+
+
+
+public void setPassword(String password) {
+	this.password = password;
+}
+
+
+
+public double getDeposit() {
+	return deposit;
+}
+
+
+
+public void setDeposit(double deposit) {
+	this.deposit = deposit;
+}
+
+
+
+
+
+
+
 	
 
 }
