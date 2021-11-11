@@ -1,57 +1,95 @@
 package com.dollarsbank.model;
 
-import java.util.List;
-
 
 public class Customer {
 	
 	
 private String name;
+
+private String username;
 	
 	private String pin;
 	
-	private List<Account> accounts;
 	
 	
 	
 	
 	
 
-	public Customer(String name, String pin, List<Account> accounts) {
+	public Customer(String name, String username, String pin) {
 		super();
 		this.name = name;
+		this.username = username;
 		this.pin = pin;
-		this.accounts = accounts;
 	}
+
+
+
+
+
 
 	public String getName() {
 		return name;
 	}
 
+
+
+
+
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
+
+
+
+
+
+	public String getUsername() {
+		return username;
+	}
+
+
+
+
+
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+
+
+
+
 
 	public String getPin() {
 		return pin;
 	}
 
+
+
+
+
+
 	public void setPin(String pin) {
 		this.pin = pin;
 	}
 
-	public List<Account> getAccounts() {
-		return accounts;
-	}
 
-	public void setAccounts(List<Account> accounts) {
-		this.accounts = accounts;
-	}
+
+
+
+
 
 	@Override
 	public String toString() {
-		return "Customer [name=" + name + ", pin=" + pin + ", accounts=" + accounts + "]";
+		return "Customer [name=" + name + ", username=" + username + ", pin=" + pin + "]";
 	}
+
+
+	
 	
 	
 

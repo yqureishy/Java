@@ -1,45 +1,50 @@
 package com.dollarsbank.model;
 
-
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Account {
 	
-	public static enum AccountType {
+	public static enum Type {
 		CHECKINGS, SAVINGS
 	}
 	
 	
+			
+			
 	
 	
-	private int accountNumber;
+	
+	
+	
 	
 	private double balance;
 	
-	private AccountType type;
+	private Type type;
 	
 	private Customer customer;
+	
+	private static final AtomicInteger count = new AtomicInteger(0);
 	
 	
 	
 	
 
-	public Account(int accountNumber, double balance, AccountType type, Customer customer) {
+	public Account(int accountNumber, double balance, Type type, Customer customer) {
 		super();
-		this.accountNumber = accountNumber;
+		accountNumber = count.incrementAndGet();
+		this.balance = balance;
+		this.type = type;
+		this.customer = customer;
+	}
+	
+	public Account(double balance, Type type, Customer customer) {
+		super();
 		this.balance = balance;
 		this.type = type;
 		this.customer = customer;
 	}
 	
 	
-
-	public int getAccountNumber() {
-		return accountNumber;
-	}
-
-	public void setAccountNumber(int accountNumber) {
-		this.accountNumber = accountNumber;
-	}
 
 	public double getBalance() {
 		return balance;
@@ -49,11 +54,11 @@ public class Account {
 		this.balance = balance;
 	}
 
-	public AccountType getType() {
+	public Type getType() {
 		return type;
 	}
 
-	public void setType(AccountType type) {
+	public void setType(Type type) {
 		this.type = type;
 	}
 
