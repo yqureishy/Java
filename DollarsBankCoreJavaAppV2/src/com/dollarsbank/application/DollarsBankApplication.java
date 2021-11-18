@@ -2,18 +2,20 @@ package com.dollarsbank.application;
 
 import java.util.Scanner;
 
+import com.dollarsbank.controller.DollarsBankController;
 import com.dollarsbank.utility.ConsolePrinterUtility;
 
 public class DollarsBankApplication {
 
 	public static void main(String[] args) {
 		
-		ConsolePrinterUtility.mainMenu();
+		try {
+			DollarsBankController.runnable();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
-		Scanner sc = new Scanner(System.in);
-		
-		int option = sc.nextInt();
-
 	}
-
 }
+
+
