@@ -206,7 +206,7 @@ System.out.println("Your current account balance is: $" + loggedInUser[0].getDep
 
 public static void fundsTransfer() {
 	
-	
+	System.out.println("Funds Transfer");
 	
 }
 
