@@ -1,10 +1,12 @@
 package com.dollarsbank.model;
 
-import java.util.Date;
+
+import java.time.LocalDateTime;
+
 
 public class Transaction {
 	
-	Date date;
+	String date;
 	
 	Double balanceInitial;
 	
@@ -18,7 +20,7 @@ public class Transaction {
 	
 	
 
-	public Transaction(Date date, Double balanceInitial, Double balanceAfter) {
+	public Transaction(String date, Double balanceInitial, Double balanceAfter) {
 		super();
 		this.date = date;
 		this.balanceInitial = balanceInitial;
@@ -26,11 +28,11 @@ public class Transaction {
 	}
 	
 
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
