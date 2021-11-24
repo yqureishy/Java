@@ -17,13 +17,28 @@ public class DollarsBankController {
 int number = 0;
 Scanner sc = new Scanner(System.in);
 
+
+
 			
-		do{
+while(number != 3) {
 			try {
 				
-				ConsolePrinterUtility.mainMenu();
-				System.out.println("Enter a number: ");
+//				ConsolePrinterUtility.mainMenu();
+
+				System.out.print("Please choose from the following menu: \n" 
+						+ "\n 1. Create New Account"
+						+ "\n 2. Login"
+						+ "\n 3. Exit \n\n");
+
+
+				System.out.println("Enter Choice (1,2 or 3): ");
+				
 				number = sc.nextInt();
+				
+				sc.nextLine();
+				
+//				sc.next();
+				
 			
 			
 			switch(number) {
@@ -33,7 +48,6 @@ Scanner sc = new Scanner(System.in);
 					ConsolePrinterUtility.userAccountPage(ConsolePrinterUtility.loggedInUser[0]);
 					break;
 			case 3: System.out.println("Goodbye!");
-					ConsolePrinterUtility.printAccounts();
 					break;		
 			}
 				
@@ -48,7 +62,7 @@ Scanner sc = new Scanner(System.in);
 		
 		
 		
-		}while(number != 3);
+		};
 		
 		sc.close();
 		

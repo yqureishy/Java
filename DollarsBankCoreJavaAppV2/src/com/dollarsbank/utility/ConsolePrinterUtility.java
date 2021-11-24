@@ -5,6 +5,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
 
 import com.dollarsbank.model.Account;
@@ -26,13 +27,6 @@ public class ConsolePrinterUtility {
 	
 	public static void mainMenu() {
 	
-	System.out.print("Please choose from the following menu: \n" 
-			+ "\n 1. Create New Account"
-			+ "\n 2. Login"
-			+ "\n 3. Exit \n\n");
-
-
-	System.out.print("Enter Choice (1,2 or 3): ");
 	
 	
 
@@ -46,9 +40,11 @@ public static void newAccount() {
 		ArrayList<Transaction> transactionList = new ArrayList<>();
 		
 		
+		
 		System.out.println("Customer Name: ");
 		
 		String name = sc.nextLine();
+		
 		
 		System.out.println("Customer Address: ");
 		
@@ -234,8 +230,33 @@ System.out.println("Your current account balance is: $" + loggedInUser[0].getDep
 
 public static void fundsTransfer() {
 	
-	System.out.println("Funds Transfer");
-	
+
+		System.out.println("Enter the user ID where you would like to transfer your money? ");
+		String userID = sc.next();
+		
+		
+Optional<Account> optionalAccount = accountList.stream().filter(e -> e.getUserId().equals(userID)).findAny();
+try {
+if(!optionalAccount.isEmpty()) {
+		
+		
+		System.out.println("Enter amount you would like to send to " + userID);
+		
+		double transferAmount = sc.nextDouble();
+		
+		Account transferAccount = accountList.stream().filter(e -> e.getUserId().equals(userID)).findFirst().get();
+		
+		transferAccount.setDeposit(transferAmount + transferAccount.getDeposit());
+		
+		loggedInUser[0].setDeposit(loggedInUser[0].getDeposit() - transferAmount);
+		
+}
+else {
+	System.out.println("UserID with " + userID + " does not exist.");
+}
+}catch(Exception e) {
+	e.printStackTrace();
+}
 }
 
 public static void recentTransactions() {
