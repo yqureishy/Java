@@ -27,7 +27,15 @@ public class ConsolePrinterUtility {
 	
 	public static void mainMenu() {
 	
-	
+		System.out.print("Please choose from the following menu: \n" 
+				+ "\n 1. Create New Account"
+				+ "\n 2. Login"
+				+ "\n 3. Exit \n\n");
+
+
+		System.out.println("Enter Choice (1,2 or 3): ");
+		
+		
 	
 
 }

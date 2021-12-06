@@ -23,22 +23,11 @@ Scanner sc = new Scanner(System.in);
 while(number != 3) {
 			try {
 				
-//				ConsolePrinterUtility.mainMenu();
-
-				System.out.print("Please choose from the following menu: \n" 
-						+ "\n 1. Create New Account"
-						+ "\n 2. Login"
-						+ "\n 3. Exit \n\n");
-
-
-				System.out.println("Enter Choice (1,2 or 3): ");
+					ConsolePrinterUtility.mainMenu();
 				
-				number = sc.nextInt();
-				
-				sc.nextLine();
-				
-//				sc.next();
-				
+					number = sc.nextInt();
+					
+					sc.nextLine();
 			
 			
 			switch(number) {
